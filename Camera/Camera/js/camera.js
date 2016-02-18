@@ -142,9 +142,18 @@
                 deviceInfo = devices.getAt(0);
             }
 
+            var outString = "Found other camera";
+            document.getElementById("Output").innerText = outString;
+
             return deviceInfo;
         });
 	}
+
+    /*
+    // Get available devices for capturing pictures
+	var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+	return allVideoDevices.Count > 0 ? allVideoDevices[0] : null;
+    */
 
 	function mediaCapture_failed(errorEventArgs) {
 	    console.log("MediaCapture_Failed: 0x" + errorEventArgs.code + ": " + errorEventArgs.message);
